@@ -1,0 +1,37 @@
+type Match {
+    displayName: String!
+    age: Int!
+    jobTitle: String!
+    heightInCm: Int!
+    city: City!
+    mainPhoto: String
+    compatibilityScore: Float!
+    contactsExchanged: Int!
+    favourite: Boolean!
+    religion: String!
+}
+
+type City {
+    name: String!
+    lat: Float!
+    lon: Float!
+}
+
+type Query {
+    matches(input: Filter!): [Match!]
+}
+
+input Filter {
+    hasPhoto: Boolean!
+    inContact: Boolean!
+    favourite: Boolean!
+    compatibilityScore: Float!
+    age: Range
+    height: Range
+    distanceInKm: Range!
+}
+
+input Range {
+    from: Int!
+    to: Int!
+}
