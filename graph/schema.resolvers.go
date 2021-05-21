@@ -6,8 +6,8 @@ package graph
 import (
 	"context"
 
-	"github.com/oblessing/filteringMatches/graph/generated"
-	"github.com/oblessing/filteringMatches/graph/model"
+	"github.com/oniyidewhite/filteringMatches/graph/generated"
+	"github.com/oniyidewhite/filteringMatches/graph/model"
 )
 
 func (r *queryResolver) Matches(ctx context.Context, input model.InputFilter) ([]*model.Match, error) {

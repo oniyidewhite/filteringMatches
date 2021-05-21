@@ -1,8 +1,8 @@
 package graph
 
 import (
-	"github.com/oblessing/filteringMatches/graph/model"
-	"github.com/oblessing/filteringMatches/store"
+	"github.com/oniyidewhite/filteringMatches/graph/model"
+	"github.com/oniyidewhite/filteringMatches/store"
 )
 
 func MapInputFilter(filter model.InputFilter) store.Filter {

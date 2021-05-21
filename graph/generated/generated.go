@@ -11,7 +11,7 @@ import (
 
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/introspection"
-	"github.com/oblessing/filteringMatches/graph/model"
+	"github.com/oniyidewhite/filteringMatches/graph/model"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 )
@@ -309,7 +309,7 @@ func (ec *executionContext) field_Query_matches_args(ctx context.Context, rawArg
 	var arg0 model.InputFilter
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg0, err = ec.unmarshalNInputFilter2githubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐInputFilter(ctx, tmp)
+		arg0, err = ec.unmarshalNInputFilter2githubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐInputFilter(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -633,7 +633,7 @@ func (ec *executionContext) _Match_city(ctx context.Context, field graphql.Colle
 	}
 	res := resTmp.(*model.City)
 	fc.Result = res
-	return ec.marshalNCity2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐCity(ctx, field.Selections, res)
+	return ec.marshalNCity2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐCity(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) _Match_mainPhoto(ctx context.Context, field graphql.CollectedField, obj *model.Match) (ret graphql.Marshaler) {
@@ -844,7 +844,7 @@ func (ec *executionContext) _Query_matches(ctx context.Context, field graphql.Co
 	}
 	res := resTmp.([]*model.Match)
 	fc.Result = res
-	return ec.marshalOMatch2ᚕᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐMatchᚄ(ctx, field.Selections, res)
+	return ec.marshalOMatch2ᚕᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐMatchᚄ(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) _Query___type(ctx context.Context, field graphql.CollectedField) (ret graphql.Marshaler) {
@@ -2039,7 +2039,7 @@ func (ec *executionContext) unmarshalInputInputFilter(ctx context.Context, obj i
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("compatibilityScore"))
-			it.CompatibilityScore, err = ec.unmarshalORange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx, v)
+			it.CompatibilityScore, err = ec.unmarshalORange2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -2047,7 +2047,7 @@ func (ec *executionContext) unmarshalInputInputFilter(ctx context.Context, obj i
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("age"))
-			it.Age, err = ec.unmarshalORange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx, v)
+			it.Age, err = ec.unmarshalORange2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -2055,7 +2055,7 @@ func (ec *executionContext) unmarshalInputInputFilter(ctx context.Context, obj i
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("height"))
-			it.Height, err = ec.unmarshalORange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx, v)
+			it.Height, err = ec.unmarshalORange2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -2063,7 +2063,7 @@ func (ec *executionContext) unmarshalInputInputFilter(ctx context.Context, obj i
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("distanceInKm"))
-			it.DistanceInKm, err = ec.unmarshalNLatLngRange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐLatLngRange(ctx, v)
+			it.DistanceInKm, err = ec.unmarshalNLatLngRange2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐLatLngRange(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -2560,7 +2560,7 @@ func (ec *executionContext) marshalNBoolean2bool(ctx context.Context, sel ast.Se
 	return res
 }
 
-func (ec *executionContext) marshalNCity2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐCity(ctx context.Context, sel ast.SelectionSet, v *model.City) graphql.Marshaler {
+func (ec *executionContext) marshalNCity2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐCity(ctx context.Context, sel ast.SelectionSet, v *model.City) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "must not be null")
@@ -2585,7 +2585,7 @@ func (ec *executionContext) marshalNFloat2float64(ctx context.Context, sel ast.S
 	return res
 }
 
-func (ec *executionContext) unmarshalNInputFilter2githubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐInputFilter(ctx context.Context, v interface{}) (model.InputFilter, error) {
+func (ec *executionContext) unmarshalNInputFilter2githubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐInputFilter(ctx context.Context, v interface{}) (model.InputFilter, error) {
 	res, err := ec.unmarshalInputInputFilter(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -2605,12 +2605,12 @@ func (ec *executionContext) marshalNInt2int(ctx context.Context, sel ast.Selecti
 	return res
 }
 
-func (ec *executionContext) unmarshalNLatLngRange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐLatLngRange(ctx context.Context, v interface{}) (*model.LatLngRange, error) {
+func (ec *executionContext) unmarshalNLatLngRange2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐLatLngRange(ctx context.Context, v interface{}) (*model.LatLngRange, error) {
 	res, err := ec.unmarshalInputLatLngRange(ctx, v)
 	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
-func (ec *executionContext) marshalNMatch2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐMatch(ctx context.Context, sel ast.SelectionSet, v *model.Match) graphql.Marshaler {
+func (ec *executionContext) marshalNMatch2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐMatch(ctx context.Context, sel ast.SelectionSet, v *model.Match) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "must not be null")
@@ -2888,7 +2888,7 @@ func (ec *executionContext) marshalOBoolean2ᚖbool(ctx context.Context, sel ast
 	return graphql.MarshalBoolean(*v)
 }
 
-func (ec *executionContext) marshalOMatch2ᚕᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐMatchᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Match) graphql.Marshaler {
+func (ec *executionContext) marshalOMatch2ᚕᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐMatchᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Match) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -2915,7 +2915,7 @@ func (ec *executionContext) marshalOMatch2ᚕᚖgithubᚗcomᚋoblessingᚋfilte
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNMatch2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐMatch(ctx, sel, v[i])
+			ret[i] = ec.marshalNMatch2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐMatch(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -2928,7 +2928,7 @@ func (ec *executionContext) marshalOMatch2ᚕᚖgithubᚗcomᚋoblessingᚋfilte
 	return ret
 }
 
-func (ec *executionContext) unmarshalORange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx context.Context, v interface{}) (*model.Range, error) {
+func (ec *executionContext) unmarshalORange2ᚖgithubᚗcomᚋoniyidewhiteᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx context.Context, v interface{}) (*model.Range, error) {
 	if v == nil {
 		return nil, nil
 	}
