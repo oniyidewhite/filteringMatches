@@ -8,6 +8,7 @@ import (
 	"github.com/oblessing/filteringMatches/graph"
 	"github.com/oblessing/filteringMatches/graph/generated"
 	"github.com/oblessing/filteringMatches/store"
+	"io/ioutil"
 	"log"
 	"os"
 )
@@ -15,28 +16,40 @@ import (
 const GraphQLEndpoint = "/graphql"
 const PORT = "8080"
 const AppShortName = "ptest"
+const Matchesfile = "matches.json"
 
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port := os.Getenv("PORT")
-		if port == "" {
-			port = PORT
-		}
-
-		logger := NewLogger()
-		repo, err := store.NewRepository()
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		engine := gin.Default()
-		engine.GET("/", NewPlayground())
-		engine.POST(GraphQLEndpoint, NewGraphQLServer(logger, repo))
-		if err := engine.Run(fmt.Sprintf(":%s", port)); err != nil {
-			logger.Fatalln(err)
-		}
+		port = PORT
 	}
+
+	logger := NewLogger()
+	repo, err := setupRepository(Matchesfile)
+	if err != nil {
+		logger.Fatalln(err)
+	}
+
+	engine := gin.Default()
+	engine.GET("/", NewPlayground())
+	engine.POST(GraphQLEndpoint, NewGraphQLServer(logger, repo))
+	if err := engine.Run(fmt.Sprintf(":%s", port)); err != nil {
+		logger.Fatalln(err)
+	}
+}
+
+func setupRepository(fileUrl string) (*store.Repository, error) {
+	fileData, err := ioutil.ReadFile(fileUrl)
+	if err != nil {
+		return nil, err
+	}
+
+	repo, err := store.NewRepository(fileData)
+	if err != nil {
+		return nil, err
+	}
+
+	return repo, nil
 }
 
 func NewLogger() *log.Logger {
