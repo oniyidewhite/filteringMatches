@@ -7,10 +7,13 @@ import (
 
 func MapInputFilter(filter model.InputFilter) store.Filter {
 	return store.Filter{
-		HasPhoto:           filter.HasPhoto,
-		InContact:          filter.InContact,
-		Favourite:          filter.Favourite,
-		CompatibilityScore: float32(filter.CompatibilityScore),
+		HasPhoto:  filter.HasPhoto,
+		InContact: filter.InContact,
+		Favourite: filter.Favourite,
+		CompatibilityScore: store.Range{
+			From: filter.CompatibilityScore.From,
+			To:   filter.CompatibilityScore.To,
+		},
 		Age: store.Range{
 			From: filter.Age.From,
 			To:   filter.Age.To,
@@ -19,7 +22,9 @@ func MapInputFilter(filter model.InputFilter) store.Filter {
 			From: filter.Height.From,
 			To:   filter.Height.To,
 		},
-		DistanceInKm: store.Range{
+		DistanceInKm: store.LatLngRange{
+			Lat:  filter.DistanceInKm.Lat,
+			Lon:  filter.DistanceInKm.Lng,
 			From: filter.DistanceInKm.From,
 			To:   filter.DistanceInKm.To,
 		},

@@ -9,13 +9,20 @@ type City struct {
 }
 
 type InputFilter struct {
-	HasPhoto           bool    `json:"hasPhoto"`
-	InContact          bool    `json:"inContact"`
-	Favourite          bool    `json:"favourite"`
-	CompatibilityScore float64 `json:"compatibilityScore"`
-	Age                *Range  `json:"age"`
-	Height             *Range  `json:"height"`
-	DistanceInKm       *Range  `json:"distanceInKm"`
+	HasPhoto           bool         `json:"hasPhoto"`
+	InContact          bool         `json:"inContact"`
+	Favourite          bool         `json:"favourite"`
+	CompatibilityScore *Range       `json:"compatibilityScore"`
+	Age                *Range       `json:"age"`
+	Height             *Range       `json:"height"`
+	DistanceInKm       *LatLngRange `json:"distanceInKm"`
+}
+
+type LatLngRange struct {
+	Lat  float64 `json:"lat"`
+	Lng  float64 `json:"lng"`
+	From int     `json:"from"`
+	To   int     `json:"to"`
 }
 
 type Match struct {

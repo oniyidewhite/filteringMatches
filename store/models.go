@@ -4,15 +4,22 @@ type Filter struct {
 	HasPhoto           bool
 	InContact          bool
 	Favourite          bool
-	CompatibilityScore float32
+	CompatibilityScore Range
 	Age                Range
 	Height             Range
-	DistanceInKm       Range
+	DistanceInKm       LatLngRange
 }
 
 type Range struct {
 	From int
 	To   int
+}
+
+type LatLngRange struct {
+	From int
+	To   int
+	Lat  float64
+	Lon  float64
 }
 
 type MatchResult struct {

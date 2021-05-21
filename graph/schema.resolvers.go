@@ -5,6 +5,7 @@ package graph
 
 import (
 	"context"
+
 	"github.com/oblessing/filteringMatches/graph/generated"
 	"github.com/oblessing/filteringMatches/graph/model"
 )

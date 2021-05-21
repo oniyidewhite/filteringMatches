@@ -264,13 +264,20 @@ input InputFilter {
     hasPhoto: Boolean!
     inContact: Boolean!
     favourite: Boolean!
-    compatibilityScore: Float!
+    compatibilityScore: Range
     age: Range
     height: Range
-    distanceInKm: Range!
+    distanceInKm: LatLngRange!
 }
 
 input Range {
+    from: Int!
+    to: Int!
+}
+
+input LatLngRange {
+    lat: Float!
+    lng: Float!
     from: Int!
     to: Int!
 }`, BuiltIn: false},
@@ -2032,7 +2039,7 @@ func (ec *executionContext) unmarshalInputInputFilter(ctx context.Context, obj i
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("compatibilityScore"))
-			it.CompatibilityScore, err = ec.unmarshalNFloat2float64(ctx, v)
+			it.CompatibilityScore, err = ec.unmarshalORange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -2056,7 +2063,51 @@ func (ec *executionContext) unmarshalInputInputFilter(ctx context.Context, obj i
 			var err error
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("distanceInKm"))
-			it.DistanceInKm, err = ec.unmarshalNRange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx, v)
+			it.DistanceInKm, err = ec.unmarshalNLatLngRange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐLatLngRange(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		}
+	}
+
+	return it, nil
+}
+
+func (ec *executionContext) unmarshalInputLatLngRange(ctx context.Context, obj interface{}) (model.LatLngRange, error) {
+	var it model.LatLngRange
+	var asMap = obj.(map[string]interface{})
+
+	for k, v := range asMap {
+		switch k {
+		case "lat":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("lat"))
+			it.Lat, err = ec.unmarshalNFloat2float64(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "lng":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("lng"))
+			it.Lng, err = ec.unmarshalNFloat2float64(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "from":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("from"))
+			it.From, err = ec.unmarshalNInt2int(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "to":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("to"))
+			it.To, err = ec.unmarshalNInt2int(ctx, v)
 			if err != nil {
 				return it, err
 			}
@@ -2554,6 +2605,11 @@ func (ec *executionContext) marshalNInt2int(ctx context.Context, sel ast.Selecti
 	return res
 }
 
+func (ec *executionContext) unmarshalNLatLngRange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐLatLngRange(ctx context.Context, v interface{}) (*model.LatLngRange, error) {
+	res, err := ec.unmarshalInputLatLngRange(ctx, v)
+	return &res, graphql.ErrorOnPath(ctx, err)
+}
+
 func (ec *executionContext) marshalNMatch2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐMatch(ctx context.Context, sel ast.SelectionSet, v *model.Match) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
@@ -2562,11 +2618,6 @@ func (ec *executionContext) marshalNMatch2ᚖgithubᚗcomᚋoblessingᚋfilterin
 		return graphql.Null
 	}
 	return ec._Match(ctx, sel, v)
-}
-
-func (ec *executionContext) unmarshalNRange2ᚖgithubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐRange(ctx context.Context, v interface{}) (*model.Range, error) {
-	res, err := ec.unmarshalInputRange(ctx, v)
-	return &res, graphql.ErrorOnPath(ctx, err)
 }
 
 func (ec *executionContext) unmarshalNString2string(ctx context.Context, v interface{}) (string, error) {

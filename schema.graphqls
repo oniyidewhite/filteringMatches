@@ -25,13 +25,20 @@ input InputFilter {
     hasPhoto: Boolean!
     inContact: Boolean!
     favourite: Boolean!
-    compatibilityScore: Float!
+    compatibilityScore: Range
     age: Range
     height: Range
-    distanceInKm: Range!
+    distanceInKm: LatLngRange!
 }
 
 input Range {
+    from: Int!
+    to: Int!
+}
+
+input LatLngRange {
+    lat: Float!
+    lng: Float!
     from: Int!
     to: Int!
 }
