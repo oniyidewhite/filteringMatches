@@ -61,12 +61,12 @@ type ComplexityRoot struct {
 	}
 
 	Query struct {
-		Matches func(childComplexity int, input model.Filter) int
+		Matches func(childComplexity int, input model.InputFilter) int
 	}
 }
 
 type QueryResolver interface {
-	Matches(ctx context.Context, input model.Filter) ([]*model.Match, error)
+	Matches(ctx context.Context, input model.InputFilter) ([]*model.Match, error)
 }
 
 type executableSchema struct {
@@ -185,7 +185,7 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 			return 0, false
 		}
 
-		return e.complexity.Query.Matches(childComplexity, args["input"].(model.Filter)), true
+		return e.complexity.Query.Matches(childComplexity, args["input"].(model.InputFilter)), true
 
 	}
 	return 0, false
@@ -257,10 +257,10 @@ type City {
 }
 
 type Query {
-    matches(input: Filter!): [Match!]
+    matches(input: InputFilter!): [Match!]
 }
 
-input Filter {
+input InputFilter {
     hasPhoto: Boolean!
     inContact: Boolean!
     favourite: Boolean!
@@ -299,10 +299,10 @@ func (ec *executionContext) field_Query___type_args(ctx context.Context, rawArgs
 func (ec *executionContext) field_Query_matches_args(ctx context.Context, rawArgs map[string]interface{}) (map[string]interface{}, error) {
 	var err error
 	args := map[string]interface{}{}
-	var arg0 model.Filter
+	var arg0 model.InputFilter
 	if tmp, ok := rawArgs["input"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("input"))
-		arg0, err = ec.unmarshalNFilter2githubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐFilter(ctx, tmp)
+		arg0, err = ec.unmarshalNInputFilter2githubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐInputFilter(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -826,7 +826,7 @@ func (ec *executionContext) _Query_matches(ctx context.Context, field graphql.Co
 	fc.Args = args
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return ec.resolvers.Query().Matches(rctx, args["input"].(model.Filter))
+		return ec.resolvers.Query().Matches(rctx, args["input"].(model.InputFilter))
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -1998,8 +1998,8 @@ func (ec *executionContext) ___Type_ofType(ctx context.Context, field graphql.Co
 
 // region    **************************** input.gotpl *****************************
 
-func (ec *executionContext) unmarshalInputFilter(ctx context.Context, obj interface{}) (model.Filter, error) {
-	var it model.Filter
+func (ec *executionContext) unmarshalInputInputFilter(ctx context.Context, obj interface{}) (model.InputFilter, error) {
+	var it model.InputFilter
 	var asMap = obj.(map[string]interface{})
 
 	for k, v := range asMap {
@@ -2519,11 +2519,6 @@ func (ec *executionContext) marshalNCity2ᚖgithubᚗcomᚋoblessingᚋfiltering
 	return ec._City(ctx, sel, v)
 }
 
-func (ec *executionContext) unmarshalNFilter2githubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐFilter(ctx context.Context, v interface{}) (model.Filter, error) {
-	res, err := ec.unmarshalInputFilter(ctx, v)
-	return res, graphql.ErrorOnPath(ctx, err)
-}
-
 func (ec *executionContext) unmarshalNFloat2float64(ctx context.Context, v interface{}) (float64, error) {
 	res, err := graphql.UnmarshalFloat(v)
 	return res, graphql.ErrorOnPath(ctx, err)
@@ -2537,6 +2532,11 @@ func (ec *executionContext) marshalNFloat2float64(ctx context.Context, sel ast.S
 		}
 	}
 	return res
+}
+
+func (ec *executionContext) unmarshalNInputFilter2githubᚗcomᚋoblessingᚋfilteringMatchesᚋgraphᚋmodelᚐInputFilter(ctx context.Context, v interface{}) (model.InputFilter, error) {
+	res, err := ec.unmarshalInputInputFilter(ctx, v)
+	return res, graphql.ErrorOnPath(ctx, err)
 }
 
 func (ec *executionContext) unmarshalNInt2int(ctx context.Context, v interface{}) (int, error) {

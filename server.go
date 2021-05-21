@@ -25,7 +25,10 @@ func main() {
 		}
 
 		logger := NewLogger()
-		repo := store.NewRepository()
+		repo, err := store.NewRepository()
+		if err != nil {
+			log.Fatal(err)
+		}
 
 		engine := gin.Default()
 		engine.GET("/", NewPlayground())
@@ -36,9 +39,8 @@ func main() {
 	}
 }
 
-
 func NewLogger() *log.Logger {
-	return log.New(os.Stdout, AppShortName, log.LstdFlags | log.Lshortfile)
+	return log.New(os.Stdout, AppShortName, log.LstdFlags|log.Lshortfile)
 }
 
 func NewGraphQLServer(logger *log.Logger, repository *store.Repository) gin.HandlerFunc {
@@ -59,4 +61,3 @@ func NewPlayground() gin.HandlerFunc {
 		srv.ServeHTTP(context.Writer, context.Request)
 	}
 }
-

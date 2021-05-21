@@ -5,16 +5,18 @@ package graph
 
 import (
 	"context"
-	"fmt"
-
 	"github.com/oblessing/filteringMatches/graph/generated"
 	"github.com/oblessing/filteringMatches/graph/model"
 )
 
-func (r *queryResolver) Matches(ctx context.Context, input model.Filter) ([]*model.Match, error) {
-	r.Logger.Println(fmt.Errorf("not implemented"))
+func (r *queryResolver) Matches(ctx context.Context, input model.InputFilter) ([]*model.Match, error) {
+	result, err := r.Repository.FindMatches(MapInputFilter(input))
+	if err != nil {
+		r.Logger.Println(err)
+		return nil, err
+	}
 
-	return nil, fmt.Errorf("not implemented")
+	return MapMatchResult(result), nil
 }
 
 // Query returns generated.QueryResolver implementation.

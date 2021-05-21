@@ -18,10 +18,10 @@ type City {
 }
 
 type Query {
-    matches(input: Filter!): [Match!]
+    matches(input: InputFilter!): [Match!]
 }
 
-input Filter {
+input InputFilter {
     hasPhoto: Boolean!
     inContact: Boolean!
     favourite: Boolean!

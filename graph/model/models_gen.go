@@ -8,7 +8,7 @@ type City struct {
 	Lon  float64 `json:"lon"`
 }
 
-type Filter struct {
+type InputFilter struct {
 	HasPhoto           bool    `json:"hasPhoto"`
 	InContact          bool    `json:"inContact"`
 	Favourite          bool    `json:"favourite"`
