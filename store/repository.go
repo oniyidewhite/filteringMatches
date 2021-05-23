@@ -11,6 +11,9 @@ type Repository struct {
 func (r *Repository) FindMatches(filter Filter) ([]MatchResult, error) {
 	results := []MatchResult{}
 	for _, v := range r.matches {
+		// calculate distance
+		distance := GetDistance(filter.DistanceInKm, v.City)
+
 		// check conditions
 		if filter.Favourite == v.Favourite &&
 			filter.InContact == (v.ContactsExchanged > 0) &&
@@ -18,7 +21,11 @@ func (r *Repository) FindMatches(filter Filter) ([]MatchResult, error) {
 			InRange(filter.CompatibilityScore, int(v.CompatibilityScore*100)) &&
 			InRange(filter.Age, v.Age) &&
 			InRange(filter.Height, v.HeightInCm) &&
-			WithinDistance(filter.DistanceInKm, v.City) {
+			InRange(Range{
+				From: filter.DistanceInKm.From,
+				To:   filter.DistanceInKm.To,
+			}, int(distance)) {
+			v.Distance = distance
 			results = append(results, v)
 		}
 	}

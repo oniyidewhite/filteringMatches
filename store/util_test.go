@@ -1,6 +1,9 @@
 package store
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestInRange(t *testing.T) {
 	current := 40
@@ -9,25 +12,27 @@ func TestInRange(t *testing.T) {
 		From: 10,
 		To:   50,
 	}, current) {
-		t.Failed()
+		t.FailNow()
 	}
 
 	if InRange(Range{
 		From: 10,
 		To:   20,
 	}, current) {
-		t.Failed()
+		t.FailNow()
 	}
 }
 
 func TestParseStringInput(t *testing.T) {
-	input := "sss"
-	if ParseStringInput(&input) != input {
-		t.Failed()
+	fmt.Println(ParseStringInput(nil))
+	if ParseStringInput(nil) != "" {
+		t.FailNow()
 	}
 
-	if ParseStringInput(nil) != "" {
-		t.Failed()
+	input := "sss"
+	fmt.Println(ParseStringInput(&input))
+	if ParseStringInput(&input) != input {
+		t.FailNow()
 	}
 }
 
@@ -38,12 +43,19 @@ func TestWithinDistance(t *testing.T) {
 		Lon:  -1.257677,
 	}
 
-	if !WithinDistance(LatLngRange{
+	filter := LatLngRange{
 		From: 10,
 		To:   99,
 		Lat:  51.509865,
 		Lon:  -0.118092,
-	}, city) {
-		t.Failed()
+	}
+
+	distance := GetDistance(filter, city)
+
+	if !InRange(Range{
+		From: filter.From,
+		To:   filter.To,
+	}, int(distance)) {
+		t.FailNow()
 	}
 }

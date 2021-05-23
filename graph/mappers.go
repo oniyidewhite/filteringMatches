@@ -49,6 +49,7 @@ func MapMatchResult(matches []store.MatchResult) []*model.Match {
 			ContactsExchanged:  c.ContactsExchanged,
 			Favourite:          c.Favourite,
 			Religion:           c.Religion,
+			Distance:           c.Distance,
 		})
 	}
 

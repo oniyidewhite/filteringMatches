@@ -40,7 +40,7 @@ func TestMapInputFilter(t *testing.T) {
 	})
 
 	if test != result {
-		t.Failed()
+		t.FailNow()
 	}
 }
 
@@ -56,6 +56,7 @@ func TestMapMatchResult(t *testing.T) {
 				Lat:  1,
 				Lon:  -1,
 			},
+			Distance:           100,
 			MainPhoto:          nil,
 			CompatibilityScore: 1,
 			ContactsExchanged:  1,
@@ -74,6 +75,7 @@ func TestMapMatchResult(t *testing.T) {
 				Lat:  1,
 				Lon:  -1,
 			},
+			Distance:           100,
 			MainPhoto:          nil,
 			CompatibilityScore: 1,
 			ContactsExchanged:  1,
@@ -83,8 +85,21 @@ func TestMapMatchResult(t *testing.T) {
 	})
 
 	for x := 0; x < len(test); x++ {
-		if test[x] != result[x] {
-			t.Failed()
+		a := test[x]
+		b := result[x]
+		if a.Favourite != b.Favourite &&
+			a.Religion != b.Religion &&
+			a.ContactsExchanged != b.ContactsExchanged &&
+			a.Distance != b.Distance &&
+			a.City != b.City &&
+			a.HeightInCm != b.HeightInCm &&
+			a.Age != b.Age &&
+			a.CompatibilityScore != b.CompatibilityScore &&
+			a.DisplayName != b.DisplayName &&
+			a.City.Name != b.City.Name &&
+			a.City.Lon != b.City.Lon &&
+			a.City.Lat != b.City.Lat {
+			t.FailNow()
 		}
 	}
 }

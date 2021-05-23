@@ -34,6 +34,7 @@ type Match struct {
 	MainPhoto          *string `json:"mainPhoto"`
 	CompatibilityScore float64 `json:"compatibilityScore"`
 	ContactsExchanged  int     `json:"contactsExchanged"`
+	Distance           float64 `json:"distance"`
 	Favourite          bool    `json:"favourite"`
 	Religion           string  `json:"religion"`
 }

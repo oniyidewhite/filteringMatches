@@ -33,6 +33,7 @@ type MatchResult struct {
 	ContactsExchanged  int     `json:"contacts_exchanged"`
 	Favourite          bool    `json:"favourite"`
 	Religion           string  `json:"religion"`
+	Distance           float64
 }
 
 type City struct {
