@@ -10,7 +10,7 @@
         "lat": 53.801277,
         "lon": -1.548567
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.76,
       "contacts_exchanged": 2,
       "favourite": true,
@@ -26,7 +26,7 @@
         "lat": 52.412811,
         "lon": -1.778197
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.97,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -42,7 +42,7 @@
         "lat": 51.481583,
         "lon": -3.179090
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.47,
       "contacts_exchanged": 5,
       "favourite": false,
@@ -58,7 +58,7 @@
         "lat": 50.768036,
         "lon": 0.290472
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.95,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -74,7 +74,7 @@
         "lat": 51.509865,
         "lon": -0.118092
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.88,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -105,7 +105,7 @@
         "lat": 51.509865,
         "lon": -0.118092
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.83,
       "contacts_exchanged": 6,
       "favourite": false,
@@ -121,7 +121,7 @@
         "lat": 51.568535,
         "lon": -1.772232
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.89,
       "contacts_exchanged": 2,
       "favourite": false,
@@ -137,7 +137,7 @@
         "lat": 51.752022,
         "lon": -1.257677
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.91,
       "contacts_exchanged": 1,
       "favourite": false,
@@ -153,7 +153,7 @@
         "lat": 51.068787,
         "lon": -1.794472
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.97,
       "contacts_exchanged": 10,
       "favourite": false,
@@ -184,7 +184,7 @@
         "lat": 50.720806,
         "lon": -1.904755
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.90,
       "contacts_exchanged": 8,
       "favourite": false,
@@ -200,7 +200,7 @@
         "lat": 50.376289,
         "lon": -4.143841
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.89,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -216,7 +216,7 @@
         "lat": 57.477772,
         "lon": -4.224721
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.87,
       "contacts_exchanged": 0,
       "favourite": true,
@@ -232,7 +232,7 @@
         "lat": 57.149651,
         "lon": -2.099075
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.87,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -248,7 +248,7 @@
         "lat": 55.458565,
         "lon": -4.629179
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.93,
       "contacts_exchanged": 8,
       "favourite": true,
@@ -264,7 +264,7 @@
         "lat": 54.607868,
         "lon": -5.926437
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.89,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -280,7 +280,7 @@
         "lat": 55.006763,
         "lon": -7.318268
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.83,
       "contacts_exchanged": 4,
       "favourite": true,
@@ -296,7 +296,7 @@
         "lat": 53.801277,
         "lon": -1.548567
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.73,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -312,7 +312,7 @@
         "lat": 51.509865,
         "lon": -0.118092
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.50,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -343,7 +343,7 @@
         "lat": 51.568535,
         "lon": -1.772232
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.88,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -359,7 +359,7 @@
         "lat": 50.720806,
         "lon": -1.904755
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.76,
       "contacts_exchanged": 0,
       "favourite": false,
@@ -375,7 +375,7 @@
         "lat": 51.509865,
         "lon": -0.118092
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.99,
       "contacts_exchanged": 50,
       "favourite": true,
@@ -391,7 +391,7 @@
         "lat": 51.772938,
         "lon": 0.102310
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://thecatapi.com/api/images/get?format=src&type=gif",
       "compatibility_score": 0.88,
       "contacts_exchanged": 0,
       "favourite": false,
