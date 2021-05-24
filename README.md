@@ -10,6 +10,8 @@ This projects uses GraphQL for matches query/filter. This application runs on po
 
 Repository.FindMatches contains the implemntation for the filtering 
 
+I also configure github to run build and test
+
 
 Query Sample
 
